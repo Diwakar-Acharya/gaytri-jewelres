@@ -1,18 +1,14 @@
 ---
+const basePath = "/gaytri-jewelres";
+
 const galleryItems = [
   {
     id: "gold-necklace",
     title: "Mughal Royal Choker",
     weight: "48.50 grams",
-    purity: "22K Hallmark",
+    purity: "22K Hallmark Gold",
     category: "Gold Bridal",
-    svgPath: `<circle cx="120" cy="110" r="45" fill="none" stroke="url(#goldGrad)" stroke-width="4" stroke-dasharray="2 4"/>
-              <path d="M70 120 C 70 170, 170 170, 170 120" fill="none" stroke="url(#goldGrad)" stroke-width="12" stroke-linecap="round"/>
-              <path d="M85 145 C 85 185, 155 185, 155 145" fill="none" stroke="url(#goldGrad)" stroke-width="6" stroke-dasharray="1 5"/>
-              <path d="M120 160 L120 185 M100 150 L95 170 M140 150 L145 170" stroke="url(#goldGrad)" stroke-width="3"/>
-              <circle cx="120" cy="190" r="6" fill="url(#goldGrad)"/>
-              <circle cx="95" cy="173" r="4" fill="url(#goldGrad)"/>
-              <circle cx="145" cy="173" r="4" fill="url(#goldGrad)"/>`
+    imageName: "necklace.png"
   },
   {
     id: "diamond-ring",
@@ -20,11 +16,7 @@ const galleryItems = [
     weight: "2.4 Carats",
     purity: "VVS1 Clarity / Platinum",
     category: "Diamond Solitaires",
-    svgPath: `<ellipse cx="120" cy="140" rx="35" ry="12" fill="none" stroke="url(#silverGrad)" stroke-width="6"/>
-              <path d="M100 135 L120 85 L140 135 Z" fill="none" stroke="url(#silverGrad)" stroke-width="2"/>
-              <polygon points="120,65 135,85 120,105 105,85" fill="url(#diamondGrad)" stroke="url(#silverGrad)" stroke-width="2"/>
-              <line x1="120" y1="65" x2="120" y2="105" stroke="#ffffff" stroke-width="1" opacity="0.8"/>
-              <line x1="105" y1="85" x2="135" y2="85" stroke="#ffffff" stroke-width="1" opacity="0.8"/>`
+    imageName: "ring.png"
   },
   {
     id: "antique-earrings",
@@ -32,12 +24,23 @@ const galleryItems = [
     weight: "18.20 grams",
     purity: "22K Antique Finish",
     category: "Antique Temple",
-    svgPath: `<path d="M120 60 L120 90" stroke="url(#goldGrad)" stroke-width="3"/>
-              <circle cx="120" cy="55" r="10" fill="url(#goldGrad)"/>
-              <path d="M100 110 C100 90, 140 90, 140 110 Z" fill="url(#goldGrad)"/>
-              <path d="M100 110 L140 110" stroke="url(#goldGrad)" stroke-width="4"/>
-              <path d="M102 120 L102 135 M111 122 L111 140 M120 122 L120 142 M129 122 L129 140 M138 120 L138 135" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round"/>
-              <circle cx="120" cy="146" r="3" fill="#ff4d4d"/>`
+    imageName: "earrings.png"
+  },
+  {
+    id: "silver-payal",
+    title: "Bridal Silver Payal",
+    weight: "120.5 grams",
+    purity: "925 Sterling Silver",
+    category: "Silver Anklets",
+    imageName: "payal.png"
+  },
+  {
+    id: "gold-kada",
+    title: "Mayur Filigree Kada",
+    weight: "28.10 grams",
+    purity: "22K Gold Hallmark",
+    category: "Gold Kada",
+    imageName: "kada.png"
   },
   {
     id: "silver-pooja",
@@ -45,36 +48,7 @@ const galleryItems = [
     weight: "250 grams",
     purity: "925 Sterling Silver",
     category: "Silver Collectibles",
-    svgPath: `<circle cx="120" cy="120" r="60" fill="none" stroke="url(#silverGrad)" stroke-width="8"/>
-              <circle cx="120" cy="120" r="50" fill="none" stroke="url(#silverGrad)" stroke-width="1" stroke-dasharray="2 3"/>
-              <circle cx="120" cy="120" r="25" fill="none" stroke="url(#silverGrad)" stroke-width="3"/>
-              <path d="M110 120 L130 120 M120 110 L120 130" stroke="url(#silverGrad)" stroke-width="2"/>
-              <circle cx="95" cy="95" r="8" fill="url(#silverGrad)"/>
-              <circle cx="145" cy="95" r="8" fill="url(#silverGrad)"/>`
-  },
-  {
-    id: "gold-bangle",
-    title: "Mayur Filigree Kada",
-    weight: "28.10 grams",
-    purity: "22K Gold Hallmark",
-    category: "Gold Kada",
-    svgPath: `<ellipse cx="120" cy="120" rx="60" ry="25" fill="none" stroke="url(#goldGrad)" stroke-width="12"/>
-              <ellipse cx="120" cy="120" rx="58" ry="23" fill="none" stroke="#121212" stroke-width="2"/>
-              <path d="M60 120 C 60 100, 70 85, 90 85" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
-              <path d="M180 120 C 180 140, 170 155, 150 155" fill="none" stroke="url(#goldGrad)" stroke-width="4"/>
-              <circle cx="90" cy="85" r="5" fill="#00ffff"/>
-              <circle cx="150" cy="155" r="5" fill="#00ffff"/>`
-  },
-  {
-    id: "diamond-pendant",
-    title: "Celestial Drop Pendant",
-    weight: "5.8 grams",
-    purity: "18K Gold / VVS Diamond",
-    category: "Diamond Elegance",
-    svgPath: `<path d="M120 40 L120 90" stroke="url(#silverGrad)" stroke-width="2"/>
-              <path d="M105 105 L120 75 L135 105 L120 135 Z" fill="url(#diamondGrad)" stroke="url(#silverGrad)" stroke-width="2"/>
-              <circle cx="120" cy="148" r="8" fill="url(#goldGrad)"/>
-              <circle cx="120" cy="148" r="3" fill="#ffffff"/>`
+    imageName: "pooja.png"
   }
 ];
 ---
@@ -93,7 +67,7 @@ const galleryItems = [
       </p>
     </div>
 
-    <!-- Gallery Grid (Masonry look on desktop) -->
+    <!-- Gallery Grid -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {galleryItems.map((item) => (
         <button 
@@ -103,33 +77,20 @@ const galleryItems = [
           data-weight={item.weight}
           data-purity={item.purity}
           data-category={item.category}
+          data-image={`${basePath}/assets/images/${item.imageName}`}
           aria-haspopup="dialog"
           aria-label={`View details of ${item.title}`}
         >
-          <!-- SVG Container simulating high quality luxury illustration -->
-          <div class="w-full aspect-[4/3] bg-gradient-to-b from-obsidian-900 to-obsidian-950 flex items-center justify-center p-6 border-b border-gold-500/5 relative overflow-hidden">
-            <!-- Hidden Gradients used in SVGs -->
-            <svg class="absolute w-0 h-0" aria-hidden="true">
-              <defs>
-                <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#f3e5ab" />
-                  <stop offset="50%" stop-color="#d4af37" />
-                  <stop offset="100%" stop-color="#aa7c11" />
-                </linearGradient>
-                <linearGradient id="silverGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#ffffff" />
-                  <stop offset="50%" stop-color="#cfd8dc" />
-                  <stop offset="100%" stop-color="#90a4ae" />
-                </linearGradient>
-                <linearGradient id="diamondGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                  <stop offset="0%" stop-color="#e0f7fa" />
-                  <stop offset="50%" stop-color="#80deea" />
-                  <stop offset="100%" stop-color="#00acc1" />
-                </linearGradient>
-              </defs>
-            </svg>
-            
-            <svg viewBox="0 0 24 24" class="w-full h-full max-h-[160px] transform group-hover:scale-105 transition-transform duration-500 ease-out" set:html={item.svgPath} aria-hidden="true" />
+          <!-- Image Container with skeleton/fallback background -->
+          <div class="w-full aspect-[4/3] bg-obsidian-900 overflow-hidden relative border-b border-gold-500/5">
+            <img 
+              src={`${basePath}/assets/images/${item.imageName}`} 
+              alt={item.title} 
+              loading="lazy"
+              width="400"
+              height="300"
+              class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500 ease-out"
+            />
             
             <div class="absolute top-4 left-4 bg-obsidian-950/80 backdrop-blur-md px-3 py-1 rounded-full border border-gold-500/10">
               <span class="text-[9px] font-bold tracking-widest text-gold-400 uppercase">{item.category}</span>
@@ -167,11 +128,14 @@ const galleryItems = [
       </button>
 
       <div class="max-w-4xl w-full bg-obsidian-900/60 border border-gold-500/20 rounded-3xl overflow-hidden flex flex-col md:flex-row shadow-2xl">
-        <!-- SVG Preview Container -->
-        <div class="w-full md:w-1/2 aspect-square bg-gradient-to-b from-obsidian-950 to-obsidian-900 flex items-center justify-center p-10 border-b md:border-b-0 md:border-r border-gold-500/10">
-          <svg id="lightbox-svg" viewBox="0 0 24 24" class="w-full h-full max-h-[250px]" aria-hidden="true">
-            <!-- Dynamic Injection -->
-          </svg>
+        <!-- Image Preview Container -->
+        <div class="w-full md:w-1/2 aspect-square bg-gradient-to-b from-obsidian-950 to-obsidian-900 flex items-center justify-center p-4 border-b md:border-b-0 md:border-r border-gold-500/10">
+          <img 
+            id="lightbox-img" 
+            src="" 
+            alt="" 
+            class="w-full h-full object-cover rounded-2xl" 
+          />
         </div>
         
         <!-- Metadata Side -->
@@ -219,7 +183,7 @@ const galleryItems = [
   const lightbox = document.getElementById('lightbox');
   const closeBtn = document.getElementById('lightbox-close');
   
-  const lbSvg = document.getElementById('lightbox-svg');
+  const lbImg = document.getElementById('lightbox-img') as HTMLImageElement;
   const lbTitle = document.getElementById('lightbox-title');
   const lbCategory = document.getElementById('lightbox-category');
   const lbPurity = document.getElementById('lightbox-purity');
@@ -233,11 +197,11 @@ const galleryItems = [
       const weight = button.getAttribute('data-weight') || '';
       const purity = button.getAttribute('data-purity') || '';
       const category = button.getAttribute('data-category') || '';
+      const imageSrc = button.getAttribute('data-image') || '';
       
-      // Extract the SVG content inside the trigger's aspect container
-      const svgEl = button.querySelector('div > svg:nth-of-type(2)');
-      if (svgEl && lbSvg) {
-        lbSvg.innerHTML = svgEl.innerHTML;
+      if (lbImg) {
+        lbImg.src = imageSrc;
+        lbImg.alt = title;
       }
       
       if (lbTitle) lbTitle.textContent = title;
