@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://diwakaracharya.github.io',
+  site: 'https://diwakar-acharya.github.io',
   base: '/gaytri-jewelres',
   integrations: [sitemap()],
   vite: {
