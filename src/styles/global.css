@@ -165,3 +165,13 @@ html.light {
   border-color: var(--border-color);
   transition: border-color 0.3s ease;
 }
+
+header.scrolled {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
+  background-color: var(--bg-card-color) !important;
+  backdrop-filter: blur(16px) !important;
+  border-bottom: 1px solid var(--border-color) !important;
+  box-shadow: 0 4px 30px var(--glass-shadow) !important;
+}
+
