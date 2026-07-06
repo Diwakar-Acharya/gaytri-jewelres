@@ -6,6 +6,28 @@
 @import "@fontsource/inter/600.css";
 @import "@fontsource/inter/700.css";
 
+:root {
+  --bg-color: #0a0a0a;
+  --bg-sec-color: #121212;
+  --bg-card-color: rgba(18, 18, 18, 0.7);
+  --text-color: #e7e7e7;
+  --text-title-color: #ffffff;
+  --text-muted-color: #b0b0b0;
+  --border-color: rgba(212, 175, 55, 0.15);
+  --glass-shadow: rgba(0, 0, 0, 0.5);
+}
+
+html.light {
+  --bg-color: #FAF9F6;
+  --bg-sec-color: #F5F2EB;
+  --bg-card-color: rgba(255, 255, 255, 0.8);
+  --text-color: #2d2d2d;
+  --text-title-color: #0d0d0d;
+  --text-muted-color: #5d5d5d;
+  --border-color: rgba(167, 130, 37, 0.25);
+  --glass-shadow: rgba(167, 130, 37, 0.05);
+}
+
 @theme {
   --font-serif: "Cinzel", Georgia, serif;
   --font-sans: "Inter", sans-serif;
@@ -38,9 +60,10 @@
   html {
     scroll-behavior: smooth;
     font-family: var(--font-sans);
-    background-color: var(--color-obsidian-950);
-    color: var(--color-obsidian-100);
+    background-color: var(--bg-color);
+    color: var(--text-color);
     -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   /* Custom gold scrollbar */
@@ -49,7 +72,7 @@
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: var(--color-obsidian-950);
+    background: var(--bg-color);
   }
   ::-webkit-scrollbar-thumb {
     background: var(--color-gold-800);
@@ -66,17 +89,13 @@
   }
 }
 
-/* Glassmorphism utility */
+/* Glassmorphism utilities mapped to CSS variables */
 .glass-panel {
-  background: rgba(18, 18, 18, 0.7);
+  background: var(--bg-card-color);
   backdrop-filter: blur(12px);
-  border: 1px solid rgba(212, 175, 55, 0.15);
-}
-
-.glass-panel-light {
-  background: rgba(250, 249, 246, 0.05);
-  backdrop-filter: blur(8px);
-  border: 1px solid rgba(250, 249, 246, 0.1);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px 0 var(--glass-shadow);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Gold text gradient */
@@ -114,4 +133,35 @@
   );
   animation: shimmer 2.5s infinite;
   content: '';
+}
+
+/* Text color helpers mapped to CSS variables */
+.theme-bg {
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+}
+
+.theme-bg-sec {
+  background-color: var(--bg-sec-color);
+  transition: background-color 0.3s ease;
+}
+
+.theme-text {
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
+
+.theme-text-title {
+  color: var(--text-title-color);
+  transition: color 0.3s ease;
+}
+
+.theme-text-muted {
+  color: var(--text-muted-color);
+  transition: color 0.3s ease;
+}
+
+.theme-border {
+  border-color: var(--border-color);
+  transition: border-color 0.3s ease;
 }
