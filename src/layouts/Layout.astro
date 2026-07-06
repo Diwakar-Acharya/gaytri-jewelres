@@ -1,0 +1,97 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const { 
+  title = "Gayatri Jewellers | Premium Gold, Diamond & Silver Jewellery in Kharagpur",
+  description = "Discover exquisite certified HUID hallmarked gold, authentic diamonds, and antique jewellery at Gayatri Jewellers, Kharagpur. Crafted for timeless elegance."
+} = Astro.props;
+
+// Easy toggle to disable staging safety for final release
+const IS_PREVIEW_STAGING = true;
+const siteUrl = "https://diwakaracharya.github.io";
+const basePath = "/gaytri-jewelres";
+const fullUrl = `${siteUrl}${basePath}`;
+
+const schemaJson = JSON.stringify({
+  "@context": "https://schema.org",
+  "@type": "JewelryStore",
+  "name": "Gayatri Jewellers",
+  "image": `${fullUrl}/assets/images/og-image.png`,
+  "@id": `${fullUrl}/#store`,
+  "url": fullUrl,
+  "telephone": "+916263888651",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Main road, near Bombay Cineplex, Gate bazar, New Settlement",
+    "addressLocality": "Kharagpur",
+    "addressRegion": "West Bengal",
+    "postalCode": "721301",
+    "addressCountry": "IN"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "22.3435", 
+    "longitude": "87.3262"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "10:30",
+    "closes": "21:00"
+  },
+  "sameAs": [
+    "https://facebook.com/gayatri.jewellers.kharagpur",
+    "https://instagram.com/gayatri.jewellers.kharagpur"
+  ]
+});
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href={`${basePath}/favicon.svg`} />
+    <meta name="generator" content={Astro.generator} />
+    
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    
+    {IS_PREVIEW_STAGING && (
+      <meta name="robots" content="noindex, nofollow" />
+    )}
+
+    {/* Open Graph / Facebook */}
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={fullUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={`${fullUrl}/assets/images/og-image.png`} />
+
+    {/* Twitter */}
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={fullUrl} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={`${fullUrl}/assets/images/og-image.png`} />
+
+    {/* Schema.org LocalBusiness */}
+    <script type="application/ld+json" set:html={schemaJson} />
+  </head>
+  <body class="bg-obsidian-950 text-obsidian-100 selection:bg-gold-500 selection:text-obsidian-950 font-sans min-h-screen flex flex-col">
+    <slot />
+  </body>
+</html>

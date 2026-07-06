@@ -1,0 +1,237 @@
+---
+const testimonials = [
+  {
+    initials: "AK",
+    name: "A. Kumar",
+    rating: 5,
+    text: "Bought my daughter's wedding jewelry set from Gayatri Jewellers. The staff was extremely transparent, explaining the weight, making charges, and BIS HUID certification clearly. Highly recommend them for gold buying in Kharagpur."
+  },
+  {
+    initials: "SD",
+    name: "S. Dutta",
+    rating: 5,
+    text: "Excellent collection of light weight rings and daily wear necklaces. Their custom design department is very talented. I shared an Instagram model ring and they recreated it perfectly within 6 days!"
+  },
+  {
+    initials: "MR",
+    name: "M. Roy",
+    rating: 5,
+    text: "Authentic, reliable local jewelers. They tested my old gold on their Karatsometer machine in front of me and gave the best value for exchange. True professionalism and absolute transparency."
+  },
+  {
+    initials: "PB",
+    name: "P. Banerjee",
+    rating: 5,
+    text: "We always buy gold for Dhanteras from Gayatri Jewellers. Their designs in Gate Bazar are highly unique compared to others. Extremely professional and courteous team."
+  }
+];
+---
+
+<section id="testimonials" class="relative py-24 md:py-32 bg-obsidian-900/40 border-t border-gold-500/10 overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    
+    <!-- Title Area -->
+    <div class="text-center max-w-2xl mx-auto mb-16">
+      <span class="text-xs font-bold tracking-widest text-gold-500 uppercase mb-3 block">Client Reviews</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-6">
+        Trusted by <span class="text-gold-gradient">Families</span>
+      </h2>
+      <p class="text-obsidian-300 font-light leading-relaxed">
+        Feedback from our premium patrons. We strive for excellence and absolute honesty in every transaction.
+      </p>
+      <span class="inline-block mt-3 px-3 py-1 rounded bg-gold-950/20 border border-gold-500/10 text-[9px] font-medium tracking-wider text-gold-400 uppercase">
+        * Sample content for preview purposes
+      </span>
+    </div>
+
+    <!-- Carousel Container -->
+    <div class="relative max-w-4xl mx-auto px-4">
+      <div id="testimonial-carousel-container" class="overflow-hidden relative min-h-[220px]">
+        <div 
+          id="testimonial-slides" 
+          class="flex transition-transform duration-500 ease-out"
+          style="transform: translateX(0%);"
+        >
+          {testimonials.map((item, idx) => (
+            <div class="w-full flex-shrink-0 px-2" role="group" aria-roledescription="slide" aria-label={`Testimonial ${idx + 1} of ${testimonials.length}`}>
+              <div class="p-8 md:p-10 rounded-3xl border border-gold-500/10 bg-obsidian-950/80 shadow-xl flex flex-col md:flex-row gap-6 items-start">
+                
+                <!-- Avatar Initials -->
+                <div class="w-14 h-14 rounded-full border border-gold-500/20 bg-gold-950/30 flex items-center justify-center font-serif text-lg font-bold text-gold-400 shrink-0">
+                  {item.initials}
+                </div>
+
+                <!-- Review Content -->
+                <div class="flex-1">
+                  <!-- Star Rating -->
+                  <div class="flex items-center gap-1 mb-4" aria-label={`Rated ${item.rating} out of 5 stars`}>
+                    {Array.from({ length: item.rating }).map(() => (
+                      <svg class="w-4 h-4 text-gold-400 fill-current" viewBox="0 0 24 24">
+                        <path d="M12 17.27L18.18 21l-1.64-7.03L22 9.24l-7.19-.61L12 2 9.19 8.63 2 9.24l5.46 4.73L5.82 21z"/>
+                      </svg>
+                    ))}
+                  </div>
+
+                  <p class="text-obsidian-200 font-light leading-relaxed text-sm md:text-base italic mb-6">
+                    "{item.text}"
+                  </p>
+
+                  <h4 class="font-serif font-bold text-gold-300 text-sm tracking-widest uppercase">{item.name}</h4>
+                  <span class="text-[10px] text-obsidian-400 uppercase tracking-widest">Verified Customer</span>
+                </div>
+
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Controls Block -->
+      <div class="flex items-center justify-between mt-8 max-w-[200px] mx-auto">
+        <!-- Prev Button -->
+        <button 
+          id="carousel-prev" 
+          class="w-10 h-10 rounded-full border border-gold-500/20 bg-obsidian-900/60 text-gold-400 hover:text-gold-200 hover:border-gold-500/50 flex items-center justify-center focus:outline-none"
+          aria-label="Previous Testimonial"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Play/Pause Button -->
+        <button 
+          id="carousel-play-pause" 
+          class="w-10 h-10 rounded-full border border-gold-500/20 bg-obsidian-900/60 text-gold-400 hover:text-gold-200 hover:border-gold-500/50 flex items-center justify-center focus:outline-none"
+          aria-label="Pause Auto Rotation"
+        >
+          <svg id="pause-icon" class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+          </svg>
+          <svg id="play-icon" class="w-4 h-4 hidden" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M8 5v14l11-7z"/>
+          </svg>
+        </button>
+
+        <!-- Next Button -->
+        <button 
+          id="carousel-next" 
+          class="w-10 h-10 rounded-full border border-gold-500/20 bg-obsidian-900/60 text-gold-400 hover:text-gold-200 hover:border-gold-500/50 flex items-center justify-center focus:outline-none"
+          aria-label="Next Testimonial"
+        >
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  const slidesContainer = document.getElementById('testimonial-slides');
+  const prevBtn = document.getElementById('carousel-prev');
+  const nextBtn = document.getElementById('carousel-next');
+  const playPauseBtn = document.getElementById('carousel-play-pause');
+  const playIcon = document.getElementById('play-icon');
+  const pauseIcon = document.getElementById('pause-icon');
+  const container = document.getElementById('testimonial-carousel-container');
+
+  let currentIndex = 0;
+  const totalSlides = 4; // Total testimonials is 4
+  let isPlaying = true;
+  let intervalId: any = null;
+
+  // Check prefers-reduced-motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  const updateSlidePosition = () => {
+    if (slidesContainer) {
+      slidesContainer.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  };
+
+  const nextSlide = () => {
+    currentIndex = (currentIndex + 1) % totalSlides;
+    updateSlidePosition();
+  };
+
+  const prevSlide = () => {
+    currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+    updateSlidePosition();
+  };
+
+  const startAutoAdvance = () => {
+    if (prefersReducedMotion.matches) return; // Don't auto play if reduced motion is requested
+    if (isPlaying && !intervalId) {
+      intervalId = setInterval(nextSlide, 5000);
+    }
+  };
+
+  const stopAutoAdvance = () => {
+    if (intervalId) {
+      clearInterval(intervalId);
+      intervalId = null;
+    }
+  };
+
+  const togglePlayPause = () => {
+    if (isPlaying) {
+      isPlaying = false;
+      stopAutoAdvance();
+      playIcon?.classList.remove('hidden');
+      pauseIcon?.classList.add('hidden');
+      playPauseBtn?.setAttribute('aria-label', 'Play Auto Rotation');
+    } else {
+      isPlaying = true;
+      startAutoAdvance();
+      playIcon?.classList.add('hidden');
+      pauseIcon?.classList.remove('hidden');
+      playPauseBtn?.setAttribute('aria-label', 'Pause Auto Rotation');
+    }
+  };
+
+  // Click handlers
+  prevBtn?.addEventListener('click', () => {
+    prevSlide();
+    if (isPlaying) {
+      stopAutoAdvance();
+      startAutoAdvance();
+    }
+  });
+
+  nextBtn?.addEventListener('click', () => {
+    nextSlide();
+    if (isPlaying) {
+      stopAutoAdvance();
+      startAutoAdvance();
+    }
+  });
+
+  playPauseBtn?.addEventListener('click', togglePlayPause);
+
+  // Pause on hover or focus
+  container?.addEventListener('mouseenter', stopAutoAdvance);
+  container?.addEventListener('mouseleave', () => {
+    if (isPlaying) startAutoAdvance();
+  });
+  container?.addEventListener('focusin', stopAutoAdvance);
+  container?.addEventListener('focusout', () => {
+    if (isPlaying) startAutoAdvance();
+  });
+
+  // Init
+  startAutoAdvance();
+
+  // Handle media query updates
+  prefersReducedMotion.addEventListener('change', () => {
+    if (prefersReducedMotion.matches) {
+      isPlaying = false;
+      stopAutoAdvance();
+      playIcon?.classList.remove('hidden');
+      pauseIcon?.classList.add('hidden');
+    }
+  });
+</script>

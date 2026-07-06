@@ -1,0 +1,142 @@
+---
+const basePath = "/gaytri-jewelres";
+---
+
+<header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300 py-5 bg-transparent">
+  <div class="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="#" class="flex items-center gap-2 group" aria-label="Gayatri Jewellers Home">
+      <div class="relative w-10 h-10 rounded-full border border-gold-500/30 flex items-center justify-center bg-obsidian-950/80 transition-colors group-hover:border-gold-500/60">
+        <span class="font-serif font-bold text-lg text-gold-500 tracking-wider">G</span>
+        <div class="absolute inset-0 rounded-full border border-transparent group-hover:border-gold-400 group-hover:scale-105 transition-transform duration-300"></div>
+      </div>
+      <div class="flex flex-col">
+        <span class="font-serif font-bold tracking-widest text-lg text-gold-200 group-hover:text-gold-400 transition-colors">GAYATRI</span>
+        <span class="text-[9px] tracking-[0.25em] text-gold-400/80 uppercase font-sans -mt-1">JEWELLERS</span>
+      </div>
+    </a>
+
+    <!-- Desktop Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8" aria-label="Main Navigation">
+      <a href="#about" class="text-sm font-medium tracking-wider hover:text-gold-400 transition-colors text-obsidian-200 uppercase">About</a>
+      <a href="#collections" class="text-sm font-medium tracking-wider hover:text-gold-400 transition-colors text-obsidian-200 uppercase">Collections</a>
+      <a href="#gallery" class="text-sm font-medium tracking-wider hover:text-gold-400 transition-colors text-obsidian-200 uppercase">Gallery</a>
+      <a href="#testimonials" class="text-sm font-medium tracking-wider hover:text-gold-400 transition-colors text-obsidian-200 uppercase">Reviews</a>
+      <a href="#location" class="text-sm font-medium tracking-wider hover:text-gold-400 transition-colors text-obsidian-200 uppercase">Find Us</a>
+    </nav>
+
+    <!-- Desktop CTA -->
+    <div class="hidden md:flex items-center gap-4">
+      <a 
+        href="tel:+916263888651" 
+        class="shimmer-btn inline-flex items-center justify-center px-6 py-2.5 rounded-full bg-gradient-to-r from-gold-600 to-gold-400 hover:from-gold-500 hover:to-gold-300 text-obsidian-950 font-sans font-semibold text-xs tracking-widest uppercase transition-all duration-300 shadow-[0_0_15px_rgba(212,175,55,0.2)] hover:shadow-[0_0_25px_rgba(212,175,55,0.4)]"
+      >
+        Call Now
+      </a>
+    </div>
+
+    <!-- Mobile Menu Trigger -->
+    <button 
+      id="mobile-menu-toggle" 
+      class="md:hidden flex flex-col justify-center items-center w-10 h-10 rounded-full border border-gold-500/20 bg-obsidian-900/60 text-gold-500 focus:outline-none"
+      aria-expanded="false" 
+      aria-controls="mobile-nav" 
+      aria-label="Toggle Navigation Menu"
+    >
+      <span class="w-5 h-0.5 bg-current transition-transform duration-300 ease-out mb-1.5 rounded-full"></span>
+      <span class="w-5 h-0.5 bg-current transition-opacity duration-300 ease-out mb-1.5 rounded-full"></span>
+      <span class="w-5 h-0.5 bg-current transition-transform duration-300 ease-out rounded-full"></span>
+    </button>
+  </div>
+
+  <!-- Mobile Dropdown Navigation -->
+  <div 
+    id="mobile-nav" 
+    class="md:hidden fixed top-[80px] left-0 w-full h-[calc(100vh-80px)] bg-obsidian-950/98 backdrop-blur-xl border-t border-gold-500/10 flex flex-col px-8 py-10 gap-6 transition-all duration-300 transform translate-x-full z-45"
+    aria-hidden="true"
+  >
+    <a href="#about" class="mobile-nav-link text-xl font-serif tracking-widest hover:text-gold-400 text-obsidian-100 transition-colors py-2 border-b border-gold-500/5">About</a>
+    <a href="#collections" class="mobile-nav-link text-xl font-serif tracking-widest hover:text-gold-400 text-obsidian-100 transition-colors py-2 border-b border-gold-500/5">Collections</a>
+    <a href="#gallery" class="mobile-nav-link text-xl font-serif tracking-widest hover:text-gold-400 text-obsidian-100 transition-colors py-2 border-b border-gold-500/5">Gallery</a>
+    <a href="#testimonials" class="mobile-nav-link text-xl font-serif tracking-widest hover:text-gold-400 text-obsidian-100 transition-colors py-2 border-b border-gold-500/5">Reviews</a>
+    <a href="#location" class="mobile-nav-link text-xl font-serif tracking-widest hover:text-gold-400 text-obsidian-100 transition-colors py-2 border-b border-gold-500/5">Find Us</a>
+    
+    <div class="mt-8 flex flex-col gap-4">
+      <a 
+        href="tel:+916263888651" 
+        class="w-full text-center py-4 rounded-xl bg-gradient-to-r from-gold-600 to-gold-400 text-obsidian-950 font-bold uppercase tracking-wider text-sm shadow-md"
+      >
+        Call Gayatri Jewellers
+      </a>
+      <a 
+        href="https://wa.me/916263888651" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="w-full text-center py-4 rounded-xl border border-gold-500/30 hover:border-gold-500/60 bg-transparent text-gold-400 font-bold uppercase tracking-wider text-sm transition-all"
+      >
+        WhatsApp Chat
+      </a>
+    </div>
+  </div>
+</header>
+
+<script>
+  const header = document.getElementById('main-header');
+  const toggleBtn = document.getElementById('mobile-menu-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link');
+
+  // Change Navbar aesthetics on Scroll
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+      header?.classList.remove('py-5', 'bg-transparent');
+      header?.classList.add('py-4', 'bg-obsidian-950/90', 'backdrop-blur-md', 'shadow-[0_4px_30px_rgba(0,0,0,0.8)]', 'border-b', 'border-gold-500/10');
+    } else {
+      header?.classList.remove('py-4', 'bg-obsidian-950/90', 'backdrop-blur-md', 'shadow-[0_4px_30px_rgba(0,0,0,0.8)]', 'border-b', 'border-gold-500/10');
+      header?.classList.add('py-5', 'bg-transparent');
+    }
+  });
+
+  // Mobile Menu Toggle logic
+  const toggleMobileMenu = () => {
+    const isExpanded = toggleBtn?.getAttribute('aria-expanded') === 'true';
+    toggleBtn?.setAttribute('aria-expanded', String(!isExpanded));
+    mobileNav?.setAttribute('aria-hidden', String(isExpanded));
+    
+    if (isExpanded) {
+      mobileNav?.classList.remove('translate-x-0');
+      mobileNav?.classList.add('translate-x-full');
+      document.body.classList.remove('overflow-hidden');
+      toggleBtn?.classList.remove('mobile-active');
+    } else {
+      mobileNav?.classList.remove('translate-x-full');
+      mobileNav?.classList.add('translate-x-0');
+      document.body.classList.add('overflow-hidden');
+      toggleBtn?.classList.add('mobile-active');
+    }
+  };
+
+  toggleBtn?.addEventListener('click', toggleMobileMenu);
+
+  // Close Mobile Menu on link clicks
+  mobileNavLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      if (toggleBtn?.getAttribute('aria-expanded') === 'true') {
+        toggleMobileMenu();
+      }
+    });
+  });
+</script>
+
+<style>
+  /* Mobile trigger animation */
+  #mobile-menu-toggle.mobile-active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  #mobile-menu-toggle.mobile-active span:nth-child(2) {
+    opacity: 0;
+  }
+  #mobile-menu-toggle.mobile-active span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+</style>

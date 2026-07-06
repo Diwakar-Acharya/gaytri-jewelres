@@ -1,0 +1,111 @@
+---
+const collections = [
+  {
+    title: "Bridal Heritage",
+    subtitle: "Sacred & Majestic Sets",
+    desc: "Exquisite heavy choker necklaces, matching jhumkas, and matching wedding sets made in 22K hallmarked gold to make your special day unforgettable.",
+    tag: "22K Gold",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3 7.5 7.03 7.5 12s2.015 9 4.5 9z" />`
+  },
+  {
+    title: "Antique & Temple",
+    subtitle: "Historical Masterpieces",
+    desc: "Crafted with vintage matte finishes, detailed filigree work, and mythological motifs inspired by traditional Indian royal heritage.",
+    tag: "Craftsmanship",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.907c.961 0 1.36 1.243.588 1.81l-3.97 2.883a1 1 0 00-.364 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.971-2.883a1 1 0 00-1.18 0l-3.97 2.883c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.364-1.118l-3.97-2.883c-.77-.567-.37-1.81.588-1.81h4.906a1 1 0 00.95-.69l1.519-4.674z" />`
+  },
+  {
+    title: "Diamond Solitaires",
+    subtitle: "Eternal & Sparkling",
+    desc: "VVS-VS clarity diamonds, including elegant engagement rings, luxury bangles, and drop earrings. All diamonds come with certified authenticity reports.",
+    tag: "VVS Certified",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />`
+  },
+  {
+    title: "Precious Silverware",
+    subtitle: "Purity for Rituals & Home",
+    desc: "Sterling silver plates, glasses, pooja articles, luxury gift items, and traditional anklets crafted with premium silver purity index.",
+    tag: "Fine Silver",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />`
+  },
+  {
+    title: "Modern Dailywear",
+    subtitle: "Minimalist & Elegant",
+    desc: "Lightweight gold chains, simple bands, modern bracelets, and office-friendly stud earrings designed for the modern lifestyle.",
+    tag: "Lightweight",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364-6.364l-.707.707M6.343 17.657l-.707.707m0-12.728l.707.707m12.728 12.728l.707.707M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />`
+  },
+  {
+    title: "Bespoke Jewelry",
+    subtitle: "Custom-made for You",
+    desc: "Bring your design ideas, drawings, or inspiration, and watch our master artisans transform them into a unique custom piece of gold or diamond ornament.",
+    tag: "Custom Orders",
+    icon: `<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />`
+  }
+];
+---
+
+<section id="collections" class="relative py-24 md:py-32 bg-obsidian-900/40 border-y border-gold-500/10">
+  <!-- Glowing effects -->
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full bg-gold-900/5 blur-[120px] pointer-events-none" aria-hidden="true"></div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="text-center max-w-2xl mx-auto mb-16 md:mb-24">
+      <span class="text-xs font-bold tracking-widest text-gold-500 uppercase mb-3 block">Selected Collections</span>
+      <h2 class="font-serif text-3xl md:text-5xl font-bold tracking-tight mb-6">
+        Curated Masterpieces for <br />
+        <span class="text-gold-gradient">Every Milestone</span>
+      </h2>
+      <p class="text-obsidian-300 font-light leading-relaxed">
+        Whether you are seeking heavy wedding jewelry, everyday minimalist designs, or custom family heirlooms, Gayatri Jewellers offers unparalleled purity and style.
+      </p>
+    </div>
+
+    <!-- Collection Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {collections.map((item) => (
+        <div class="group relative p-8 rounded-2xl border border-gold-500/10 bg-obsidian-950/80 hover:border-gold-500/30 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.5)] flex flex-col justify-between">
+          <div>
+            <!-- Header elements -->
+            <div class="flex items-center justify-between mb-6">
+              <span class="text-[10px] font-bold tracking-widest text-gold-400 uppercase bg-gold-950/40 px-3 py-1 rounded border border-gold-500/20">{item.tag}</span>
+              <div class="w-10 h-10 rounded-full border border-gold-500/10 flex items-center justify-center text-gold-400 bg-obsidian-900 group-hover:text-gold-300 group-hover:border-gold-500/40 transition-colors">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon} aria-hidden="true" />
+              </div>
+            </div>
+
+            <!-- Content -->
+            <h3 class="font-serif text-xl font-bold text-gold-100 group-hover:text-gold-300 transition-colors mb-1">{item.title}</h3>
+            <span class="text-xs text-gold-500/80 tracking-wider block mb-4 uppercase">{item.subtitle}</span>
+            <p class="text-sm font-light text-obsidian-300 leading-relaxed mb-8">{item.desc}</p>
+          </div>
+
+          <!-- Bottom Action link -->
+          <div class="flex items-center gap-2 text-xs font-semibold tracking-widest text-gold-400 group-hover:text-gold-300 transition-colors">
+            <span>DISCOVER DESIGNS</span>
+            <svg class="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Bottom Promo Banner -->
+    <div class="mt-16 md:mt-24 p-8 md:p-12 rounded-3xl border border-gold-500/10 bg-gradient-to-r from-obsidian-950 via-gold-950/10 to-obsidian-950 flex flex-col md:flex-row items-center justify-between gap-8">
+      <div class="text-center md:text-left">
+        <h4 class="font-serif text-2xl font-bold text-gold-200 mb-2">Have a custom design in mind?</h4>
+        <p class="text-sm text-obsidian-300 font-light">Share your sketches or photo references. Our artisans will bring it to life in 22K Gold or Diamond.</p>
+      </div>
+      <a 
+        href="https://wa.me/916263888651" 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        class="inline-flex items-center justify-center px-8 py-3.5 rounded-full bg-transparent hover:bg-gold-500/5 text-gold-400 border border-gold-500/30 hover:border-gold-500/60 font-semibold text-xs tracking-wider uppercase transition-all shrink-0"
+      >
+        Submit Custom Design Request
+      </a>
+    </div>
+
+  </div>
+</section>
